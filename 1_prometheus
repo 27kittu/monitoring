@@ -1,0 +1,45 @@
+Prometheus:
+------------
+- is a monitoring tool to monitor 'highly dynamic container envir' but can also monitor servers
+
+ex: k8s, docker swarm
+
+- Maintaining complex infra needs to monitoring several resources in case of errors or downtime or failures and crashes 
+
+- Monitoring these resources can be done using Prometheus to alert based on certain benchmarks or alerts or crossing any threshold
+
+Prometheus Arch:
+------------------
+- Prometheus at core has 'Prometheus server' which again has
+	- Time series database
+	- data retrieval worker(pull data from apps/services/containers)
+	- web server(server api to project data to dashboard)
+
+targets: any servers, containers, apps /dbs
+
+Units for monitoring: CPU, Memory/Disk, Request count, Request Duration
+
+- Metrics has human readable terms or attributes
+metrics are of 3 types:
+
+counter	: Number of times an event took place
+gauge	: Current value of the event that happend
+Histogram: How long is the request in total
+
+
+
+- Prometheus pull data from an 'http' endpoint which prometheus can process
+- many services don't have prometheus endpoints so, processing that type of data is not possible. Instead of that, prometheus has 'exporter' which will export the processed data to the prometheus endpoint
+
+
+MONITOR A LINUX SERVER:
+------------------------
+- Download a node exporter from prometheus official site
+- Untar the package and execute
+- convert the metrics of the server
+- expose metrics endpoint
+- configure Prometheus to scrape the data
+
+
+
+
